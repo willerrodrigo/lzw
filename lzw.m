@@ -2,7 +2,9 @@ clc;
 clear all;
 close all;
 
-entrada = input('Entre com a string a ser convertida (A string deve estar entre áspas simples): ');
+% ----------------------------- COMPRESSÃO -------------------------------------
+
+entrada = input('Entre com a string a ser comprimida (A string deve estar entre áspas simples): ');
 tamanhoEntrada = length(entrada);
 dicionario = input('Entre com o dicionario (A string deve estar entre áspas simples): ');
 tamanhoDicionario = length(dicionario);
@@ -53,13 +55,15 @@ for i=1:tamanhoEntrada-1 % Percorre toda entrada
 end
 
 saida = saida(1:k); % Pegando apenas os index que foram usados
-disp('Dicionário gerado na codificação: ');
+disp('Dicionário gerado na compressão: ');
 disp(novoDicionario);
-disp('String codificada: ');
+disp('String comprimida: ');
 disp(saida);
 
 
-% Decodificação
+
+% ----------------------------- DESCOMPRESSÃO ----------------------------------
+
 tamanhoSaida = length(saida);
 index = length(dicionario);
 string = '';
@@ -90,9 +94,9 @@ while tamanhoSaida >= g % Enquanto não acabar a string
 end
 
 string = strcat(string, entry);
-disp('Dicionário gerado na decodificação: ');
+disp('Dicionário gerado na descompressão: ');
 disp(dicgen);
-disp('String original após decodificar: ');
+disp('String original após descomprimir: ');
 disp(string);
 
 disp('Taxa de compressão: ');
